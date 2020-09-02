@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ABCWebApplication.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "GetAllProduct";
+}
+
+<h1>Products</h1>
+
+
+<form method="get">
+    <div class="input-group">
+        <input class="form-control" asp-for="SearchTerm">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>"
+        </div>
+    </div>
+</form>
+<p>
+    <a asp-action="AddProduct" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Add New Product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductQuantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductQuantity)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
