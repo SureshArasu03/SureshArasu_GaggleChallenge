@@ -7,6 +7,12 @@ using ABCEntities;
 using ABCFacadeServices.Context;
 using ABCInterface;
 
+/// <summary>
+/// The ABC Faced Services implements the interfaces correspoding to each functionality
+/// 
+/// Faced Deign Pattern loosly couple the methods, which is highly helpful in further enhancements and Testing process
+/// </summary>
+
 namespace ABCFacadeServices
 {
     public class ABCServices : IABCIntereface

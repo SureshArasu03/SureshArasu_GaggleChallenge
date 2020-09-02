@@ -9,6 +9,11 @@ using ABCWebApplication.Models;
 using ABCInterface;
 using ABCEntities;
 
+/// <summary>
+/// Home Controller serves as the primary controller with loosely couple buisness functionalities 
+/// The services are called from Facade layer of the solution
+/// </summary>
+
 namespace ABCWebApplication.Controllers
 {
     public class HomeController : Controller
@@ -30,6 +35,8 @@ namespace ABCWebApplication.Controllers
         {
             return View();
         }
+
+
 
         [HttpPost]
         public IActionResult AddProduct(ProductModel product)

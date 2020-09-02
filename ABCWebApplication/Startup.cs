@@ -31,6 +31,8 @@ namespace ABCWebApplication
 
             services.AddScoped<IABCIntereface, ABCServices>();
 
+            //SQLLite is configured using a configuration service call
+
             services.AddDbContext<ProductDbContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("DBConnection")));
         }

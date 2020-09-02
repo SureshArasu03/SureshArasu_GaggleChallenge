@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using ABCEntities;
 
+/// <summary>
+/// Interfaces for required functional logic
+/// </summary>
+
 namespace ABCInterface
 {
     public interface IABCIntereface

@@ -10,6 +10,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ABCEntities
 {
+    /// <summary>
+    /// Entity structure 
+    /// </summary>
     public class Product
     {
         [Key]

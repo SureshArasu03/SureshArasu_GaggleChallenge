@@ -14,8 +14,9 @@ namespace ABCFacadeServices.Context
         }
     
         /// <summary>
-        /// model creator for creating a model in Database 
-        ///setting productID as primaryKey
+        /// Model creator for creating a Model in Database 
+        /// The productID is kept as primarykey
+        /// The Product Name is considered as unique Product Identification attribute
         /// </summary>
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
