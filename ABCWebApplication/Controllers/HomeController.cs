@@ -176,6 +176,7 @@ namespace ABCWebApplication.Controllers
                     prd.ProductPrice = product.ProductPrice;
                     prd.ProductQuantity = product.ProductQuantity;
                     prd.ProductCategory = product.ProductCategory;
+                    prd.ProductStatus = product.ProductStatus;
 
                     productModels.Add(prd);
                 }
@@ -202,6 +203,7 @@ namespace ABCWebApplication.Controllers
 
         }
       
+        [HttpPost]
         public IActionResult SearchProduct(string name)
         {
             ProductModel prd = new ProductModel();
@@ -214,9 +216,10 @@ namespace ABCWebApplication.Controllers
                 {
                     prd.ProductID = product.ProductID.ToString();
                     prd.ProductName = product.ProductName;
+                    prd.ProductPrice = product.ProductPrice;
                     prd.ProductCategory = product.ProductCategory;
                     prd.ProductQuantity = product.ProductQuantity;
-                    return View(prd);
+                    return View("ProductDetails",prd);
                 }
                 else
                 {

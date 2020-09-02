@@ -6,18 +6,21 @@
 
 <h1>Products</h1>
 
-
-<form method="get">
-    <div class="input-group">
-        <input class="form-control" asp-for="SearchTerm">
-        <div class="input-group-append">
-            <button type="submit" class="btn btn-primary">Search</button>"
+<div>
+    <form asp-action="SearchProduct" method="post">
+        <div class="input-group">
+            <input class="form-control" name="name" id="name">
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-primary" asp-action="SearchProduct" value="Search"/>
+            </div>
         </div>
-    </div>
-</form>
-<p>
-    <a asp-action="AddProduct" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Add New Product</a>
-</p>
+    </form>
+</div>
+<div>
+    <p>
+        <a asp-action="AddProduct" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Add New Product</a>
+    </p>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -34,32 +37,38 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProductQuantity)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductStatus)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductCategory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductQuantity)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
-                </td>
-            </tr>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
