@@ -114,6 +114,8 @@ namespace ABCWebApplication.Controllers
             prd.ProductPrice = product.ProductPrice;
             prd.ProductQuantity = product.ProductQuantity;
             prd.ProductCategory = product.ProductCategory;
+            product.ProductStatus = _iABCInterface.GetProductStatus(prd).ProductStatus;
+            prd.ProductStatus = product.ProductStatus;
 
             string result = "";
             try
