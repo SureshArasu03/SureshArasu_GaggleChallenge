@@ -193,7 +193,7 @@ namespace ABCWebApplication.Controllers
                     return View(productModels);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ViewBag.Message = "Sorry No Products";
 
@@ -219,6 +219,7 @@ namespace ABCWebApplication.Controllers
                     prd.ProductPrice = product.ProductPrice;
                     prd.ProductCategory = product.ProductCategory;
                     prd.ProductQuantity = product.ProductQuantity;
+                    prd.ProductStatus = product.ProductStatus;
                     return View("ProductDetails",prd);
                 }
                 else
@@ -228,7 +229,7 @@ namespace ABCWebApplication.Controllers
                 }
                 
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 ViewBag.Message = "Product Name searched is not found please search different name";
                 return RedirectToAction("GetAllProduct");
